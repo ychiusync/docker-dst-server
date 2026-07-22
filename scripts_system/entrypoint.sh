@@ -53,7 +53,8 @@ if [ "$1" == "dontstarve_dedicated_server_nullrenderer" ] || [ "$1" == "supervis
     # Update game
     # note that the update process modifies (resets) the mods folder so we symlink that later
     echo "Updating server..."
-    steamcmd +runscript /opt/steamcmd_scripts/install_dst_server
+
+	steamcmd +runscript /opt/steamcmd_scripts/install_dst_server || true
 
     # if there are no mods config, use the one that comes with the server
     if [ ! -d "${DIR_MODS_USER}" ]; then
